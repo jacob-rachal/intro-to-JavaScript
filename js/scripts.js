@@ -5,7 +5,7 @@
 // Simple popup.
 //alert(rand); //makes a popup when the page is loaded/reloaded.
 // User clicks cancel or OK
-//confirm(rand); //there is a way to get the user's response back from this.
+//confirm(rand); //there is a way to get the user's response back from this. (TAKE AS A BOOLEAN)
 //Accepts a user's input
 //prompt(rand); //for input, you can get back the user's input.
 // Accepts a user's input then alerts the name.
@@ -17,6 +17,12 @@ console.log("The user's first name is " + firstName);
 alert("The user's last name is: " + lastName);
 
 let userBDay = prompt("Excellent! One more question for you. What's your birthday in (mm/dd/yy) format? ");
-confirm(" Is " + userBDay + " really your birthday? (Click OK for yes and CANCEL for no.)" ); //is there a way to catch what the user clicks on?
-alert(firstName + " " + lastName +"'s birthday is on " + userBDay);
-//...wait, was that it?
+let dodad = confirm(" Is " + userBDay + " really your birthday? (Click OK for yes and CANCEL for no.)" );
+//Hang on, let me see if this works...
+if (dodad) {
+  console.log(dodad);
+  alert(firstName + " " + lastName +"'s birthday is on " + userBDay);
+} else {
+  console.log(dodad);
+  alert(firstName + " " + lastName +"'s birthday is NOT on " + userBDay);
+}// Wow, it does work.
