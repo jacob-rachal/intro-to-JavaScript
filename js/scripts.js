@@ -1,16 +1,7 @@
-// Jacob Rachal 8/20/2018
-// Day 3 - conditionals
+// Jacob Rachal 8/22/2018
+// Day 3 - takehome
 
-// Day 2 - Console log, Var, and String Interpolation
-// Log out into the console a string that says "Hello World!"
-console.log("Hello World!");
 
-//Declairing a variable with type STRING, contents are my first name.
-var myName = "Jacob";
-// Can also call it mYnAmE.
-var myAge = 26;
-// Have variable names reflect what they contain!
-// This is the only way to declare a variable in ES5, there are about 3 methods in ES6 or ES7.
 console.log(myName, myAge);
 // console.log(myAge);
 // Look and see if these variables are declared ABOVE where they are used, else get an undefined error.
@@ -222,39 +213,57 @@ if ( 1 === myNumb ) {
 // const today = new Date().getDay() + 1; //Sunday is index 0, so need to adjust.
 // console.log(today);
 
-// const today = new Date().getDay();
-// switch (today) {
+//Day 3 takehome section
+let firstName = prompt("Please enter your first name: ");
+let lastName = prompt("Please enter your last name: ");
+//prompt, alert, confirm
+let userColor = prompt("Alright! Now, out of the folowing 10 colors, which one is your favorite? Red, orange, yellow, green, blue, pink, purple, black, white, and grey. (Enter your answer as a lowercase string.)")
+//need to include the user's name in the response messages!
+switch (userColor) {
 //   //comparing ^that against case THIS:
-//   case 0:
-//     console.log("Sunday");
-//     break; //escapes the switch statement.
-//
-//   case 1:
-//     console.log("Monday");
-//     break;
-//
-//   case 2:
-//     console.log("Tuesday");
-//     break;
-//
-//   case 3:
-//     console.log("Wednesday");
-//     break;
-//
-//   case 4:
-//     console.log("Thursday");
-//     break;
-//
-//   case 5:
-//     console.log("Friday");
-//     break;
-//
-//   case 6:
-//     console.log("Saturday");
+  case "red":
+    alert("Things with this color tend to go faster.");
+    break; //escapes the switch statement.
 
-    //default:
-    //console.log("catchall");
-// }
+  case "orange":
+    alert("Orange to meet you.");
+    break;
+
+  case "yellow":
+    alert("Better start preparing to stop.");
+    break;
+
+  case "green":
+    alert("Get that hammer down and go!");
+    break;
+
+  case "blue":
+    alert("I like that color too!");
+    break;
+
+  case "pink":
+    alert("Oink oink. :)");
+    break;
+
+  case "purple":
+    alert("Royally nice.");
+    break;
+
+  case "black":
+    alert("...so all the pigments?");
+    break;
+
+  case "white":
+    alert("...so the visible spectrum?");
+    break;
+
+
+  case "grey":
+    alert("...I got nothin'.");
+
+    default:
+    console.log("catchall");
+}
 
 // Day 3 -- MATH!!!!
 const addition = 1 + 1;
