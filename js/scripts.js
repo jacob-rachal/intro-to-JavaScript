@@ -5,23 +5,6 @@
 
 // DAY 3 -- conditionals, comparison
 
-//the 'if' statement
-//if () {}
-//if(1=='1')
-if (1 === 1) {
-  //console.log("I am here!");
-  //console.log(true); //prints out true.
-  //console.log(!true);// ! in JS represents 'not', same as in other computer langs. Also means we can take the opposite of things.
-  //console.log(true);
-}
-
-if (1 !==18405826593 ) {
-  console.log("I am here! 1");
-}
-if (1 !=="1" ) {
-  console.log("I am here! 2");
-}
-
 //recap:
 //  === Strict comparison of data type and value
 // == Loose comparison
@@ -29,36 +12,6 @@ if (1 !=="1" ) {
 // !== Strict Not comparison
 // != Loose Not comparison
 
-if (1 === 2 ) {
-  console.log("I am here! 3");
-} else {
-  console.log("In the else.");
-} //no conditions on an else (unless it is an else if). Acts as the catchall.
-
-if (1 === 1 ) {
-  console.log("I am here! 4");
-} else {
-  console.log("In the else.");
-}
-
-//  < and >
-if ( 3 > 1) {
-  console.log("I am here! 5");
-} else {
-  console.log("In the else. 5");
-}
-if ( 0 > 1 ) {
-  console.log("I am here! 6");
-} else {
-  console.log("In the else. 6");
-}
-
-// >= greater than or equal to, <= less than or equal to.
-if ( 1 >= 1 ) { // the = sigh should always come second to the <> symbol.
-  console.log("I am here! 7");
-} else {
-  console.log("In the else. 7");
-}
 //Reading JS just like reading english.
 
 // recap part 2:
@@ -73,7 +26,6 @@ if ( 1 === myNumb ) {
 } else {
   console.log("In the else. 8");
 }
-
 // const userInput = prompt('Please enter a number:');
 // if ( 1 == userInput ) { // the = sign should always come second to the <> symbol.
 //   console.log("I am here! 9");
@@ -215,4 +167,130 @@ console.log(theirNum);
 // DAY 4 -- ARRAYS and LOOPS
 // 8/22/2018
 
-let myArray = ['Red', 'Blue', 'Green', 'Purple', 'Black', 'White', 'Gray'];//can be an array of strings, #'s, objects, other arrays.
+let myArray = ['Red', 'Blue', 'Green', 'Purple', 'Red', 'Black', 'White', 'Gray'];//can be an array of strings, #'s, objects, other arrays.
+// arrays start with a zero-index for their first item.
+// let red = myArray[0];
+console.log(myArray[1]);
+console.log(myArray.length); //returns the length of an array, the total # of THINGS within said array.
+//Will probably be learning how to loop using this.
+
+//new array
+// let about = ['Name', age, 'Fact', true/false];
+let about = ['Jacob', 26, 'Gravity is a force', true]; //multiple data types, not exactly a good thing.
+console.log(about);//got back -> (4) ["Jacob", 26, "Gravity is a force", true]
+
+// SO, lets make an array and see if we can manipulate it.
+// let nums = [1,
+//   2,
+//   3,
+//   4,
+//   5,
+//   6,
+//   7,
+//   8,
+//   9
+// ]; //what we may have to set the array as when it has to hold other arrays. Or something!
+let nums = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+//console.log(Array.isArray(nums)); //checks if something IS an array. Returns true/false
+// nums.push(10); //adds included element to the back of the array.
+// nums.push(11, 12, 13); //can add multiple things as long as they are separated by commas.
+// snums.unshift(0); //Places the element to the BEGINNING of the array. Not as important as push, but still useful.
+// nums.pop();//VERY IMP! Don't pass anything to it. It rempoves the last item of the array. Will have to use loops or multiple lines to remove multiple items.
+// nums.shift(); //Removes the FIRST element of the array. I wsh I had this back in my early Computer Science days.
+// nums.splice(6); //goes to given index, then removes everything from that index on to the right.
+// nums.splice(6,1); //  go to this index, then remove this many spaces from it.
+// nums.splice(1,4); //"remove 2 thru 5". Useful since you may want to remove info from the middle of an array without touching the beginning or the end.
+
+// let sliceArr = nums.slice(3); //slice creates a new array from the given index onwards. Doesn't harm parent array.
+// let slice = nums.slice(3, 6); //designate the slice between indexes 3 to 6 w/out including the 6th index.
+// console.log(nums);
+// console.log(sliceArr);
+// console.log(slice);
+
+//going back to the color array.
+// console.log(myArray.indexOf('Green')); // returns the index of the given value of said array.
+//example below of indexOf in action.
+// let color = myArray.indexOf('Green');
+// console.log(myArray[color]); //should return Green.  Lets us have more control over manipulating the array elements, or finding info about array elements.
+
+//Going back to the nums array.
+console.log(nums);
+
+//going back to the numbers array. to remove something.
+// let color = myArray.indexOf('Green'); //insert a color here, it will get removed from myArray.
+// myArray.splice(color, 1); //we only want to remove one item.
+// console.log(myArray);
+
+
+//Say we want to get the last index of an array. There are two ways of doing this.
+let lastIndex = myArray.length -1; //the wrong way to do it.
+let properLastIndex = myArray.lastIndexOf('Red'); //returns the index of the last index of singular/multiple instances of the given input.
+// console.log(properLastIndex);//won't be doing it this way.
+
+
+// console.log(myArray.reverse()); //returns the reversed array.
+
+//something really weird
+// console.log(myArray.sort()); //sorts the array alphabetically.
+// console.log(myArray.sort().reverse()); //reverses the alphabetical array.
+
+//recap
+// .push -Adds new item to the end of the array.
+// .unshift - Adds new item to the beginning of the array.
+// .pop -Removes the last item of an array.
+// .shift - Removes the first item in the array.
+// .splice - Cuts out section of the array.
+// .slice - Makes a copy of the array and then cuts the array.
+// .indexOf - Gives the index of an item in the array.
+// .reverse - Reverse the array.
+// .sort() -Sorts the array.
+
+
+// day 4 LOOPS ===================================================================
+// 6 different types of loops: while, for, do-while, for-each, for-of, for-in. And break & continue.
+
+let num = 0;
+// while (num < 10) {
+//   console.log(num);
+//   num++;
+// }
+// console.log(num);
+// for (let i = 0; i < 10; i++) { //can decrament via i--.
+//   //console.log(num); //0 is printed 10 times.
+//   console.log('I have ran');
+// }//will be used the most.
+
+//do-while. condition is evaluated after the action is performed.
+// do {
+//   num++;
+//   console.log(num);
+// } while (num < 10); //we won't use nearly as much.
+
+// for each loops. Using myArray. Scratch that, doing later since it involves using functions.
+
+//Exercise: using a for loop to print out each color int he myArray.
+// for (let i = 0; i < myArray.length; i++) {
+//   console.log(myArray[i]);
+// }
+
+//doing arrays within arrays "try it yourself" from the dayFour page.
+let myFavoriteMovies = [];
+let firstFav = ["The LEGO Movie", "2015"];
+let secondFav = ["STAR WARS Ep. 4", "1981"];
+let thirdFav = ["Frozen", "2016"];
+myFavoriteMovies.push(firstFav, secondFav, thirdFav);
+// console.log(myFavoriteMovies[2][1]); //get the year of the 3rd film.
+let movieYears = [];
+// movieYears.push(myFavoriteMovies[0][1], myFavoriteMovies[1][1], myFavoriteMovies[2][1]);
+for (let i =0; i <  myFavoriteMovies.length; i++) {
+  movieYears.push(myFavoriteMovies[i][1]);
+}
+console.log(movieYears);
+
+//Regarding Homework...
+// start off
+
+//end with 
+
+
+//next week we have a sub.
