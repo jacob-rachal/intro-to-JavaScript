@@ -1,5 +1,5 @@
-// Jacob Rachal 8/22/2018
-
+// Jacob Rachal 8/27/2018
+// Takehome
 
 // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
@@ -249,7 +249,7 @@ let properLastIndex = myArray.lastIndexOf('Red'); //returns the index of the las
 // day 4 LOOPS ===================================================================
 // 6 different types of loops: while, for, do-while, for-each, for-of, for-in. And break & continue.
 
-let num = 0;
+// let num = 0;
 // while (num < 10) {
 //   console.log(num);
 //   num++;
@@ -290,7 +290,30 @@ console.log(movieYears);
 //Regarding Homework...
 // start off
 
-//end with 
-
+//end with ...
 
 //next week we have a sub.
+// TAKEHOME SECTION for dayFour
+
+//make an array of things todo this weekend.
+let toDoWkEnd = [];
+//get 3 things from user.
+let thingOne = [prompt("What is the first thing you need to do this weekend?")];
+let thingTwo = [prompt("What is the second thing you need to do this weekend?")];
+let thingThree = [prompt("What is the third thing you need to do this weekend?")];
+
+toDoWkEnd.push(thingOne, thingTwo, thingThree);
+// console.log(thingOne); //checking that it works.
+
+//for loop now.
+for(let i=0; i<toDoWkEnd.length; i++) {
+  //get a random # and attach it to one of the elements
+  //reuse nums?
+  toDoWkEnd[i].push(nums.length%i);
+}
+
+// while loop here.
+
+while (i<2) {
+  //do the things here.
+}
