@@ -310,10 +310,84 @@ for(let i=0; i<toDoWkEnd.length; i++) {
   //get a random # and attach it to one of the elements
   //reuse nums?
   toDoWkEnd[i].push(nums.length%i);
+  //can use prompt to the user to ask them how long item should take.
+  // let temp = prompt()
 }
 
 // while loop here.
-
 while (i<2) {
-  //do the things here.
+  //find the longest day, log to the console
 }
+
+//in a do-while, add 'easy-peasy' to the other 2 that weren't the longest.
+
+// Lastly, alert the arrays that have easy-peasy in them.
+
+
+// With Ryeker
+let todos = [];
+let todo1 = prompt("Hey there, what are you doing?", "Eat Cheese."); //2nd string is the default
+// let timeframeOne = prompt("How long should this take you? (in days)", "1");
+let todo2 = prompt("Hey there, what are you doing?", "Eat Meat."); //2nd string is the default
+// let timeframeTwo = prompt("How long should this take you? (in days)", "2");
+let todo3 = prompt("Hey there, what are you doing?", "Play Golf."); //2nd string is the default
+// let timeframeThree = prompt("How long should this take you? (in days)", "3");
+
+//making arrays.
+let todoOneArr = [todo1]//, timeframeOne];//not a pleasent way of doing it.
+let todoTwoArr = [todo2]//, timeframeTwo];
+let todoThreeArr = [todo3]//, timeframeThree];
+//on windows, place selector on a line and hold down Ctrl, click on other lines...BOOM.
+todos.push(todoOneArr, todoTwoArr, todoThreeArr);
+//push is a function.
+
+//a for loop.
+for(let i = 0; i<todos.length; i++) {
+  //todos[i]
+  let timeframe = prompt(`About how many days should ${todos[i][0]} take? (Please provide in days)`, "1"); //default of 1 days
+  //parsinteger, to convert our string reply into a int so we can compare the # of days later on down the line.
+  //parseInt(timeframe); //takes any data type and tries to convert it into an integer.  It doesn't change the parameter for the rest of the code's life.
+  let temp = parseInt(timeframe); //or could reassign timeframe.
+  if(!isNaN(temp) ) {
+    todos[i].push(temp);
+  } else {
+    todos[i].push(1); //Edge Casing: catching potential errors for your user. Not the best way in this case.
+  }
+  //todos[i].push(parseInt(timeframe));
+}
+// NaN ::not a Number.  not exactly a error, but it does say invalid number.
+// isNaN() --returns a true/false on if element is NOT a NUMBER. So if it is a number, returns false.
+// How you evaluate if something is NOT a #.
+
+//while loop section.
+let n = 0; //iterator
+let max = 0; //comparator. Global variable.
+while (n < todos.length) {
+  if (max < todos[n][1]) {
+    max = todos[n][1];
+  }
+  n++; //end of loop.
+}
+//pseudocode.
+
+let m = 0;
+// while (m < todos.length) {
+//   if (max = todos[m][1] ) {
+//     console.log(`${todos[m][0]} is the thing that will take the longest.`);
+//   } else {
+//     todos[m].push("easy-peasy");
+//   }
+//   m++;
+// }
+
+do {
+  if (todos[m][1] === max) {
+    // console.log(`${todos[m][0]} is the thing that will take the longest.`);
+    console.log(todos[m]);
+  } else {
+    todos[m].push("easy-peasy");
+    alert(todos[m]);
+  }
+  m++;
+} while(m < todos.length);
+//DONE! Ack.
