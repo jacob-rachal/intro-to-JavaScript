@@ -526,8 +526,50 @@ function calculateDogYears(age) {
 // A method is able to operate on data that is contained within the class (remembering that an object is an instance of a class - the class is the definition, the object is an instance of that data).
 
 
-//examples.
-parseInt();//needs arguments.
+//examples of methods and functions.
+// parseInt();//needs arguments.
 
 // "Ryeker".toUpperCase();//doesnot need arguments.
-console.log("Ryeker".toUpperCase());//methods implicitly uses the thing to the left of the period.
+// console.log("Ryeker".toUpperCase());//methods implicitly uses the thing to the left of the period.
+
+
+// TAKEHOME DAY 5 SECTION.
+// Instructions;;;
+// On your takehome-day5 branch write a program that uses functions to:
+//
+// Take a number and return the square of that number (power of 2).
+// If a non-number argument is passed into the function, alert NaN and prompt for another response
+function checkSquare(n) {
+  let parsed = parseInt(n);
+  if(!isNaN(parsed)) {
+    return parsed * parsed;
+  } else {
+    let newAnswer = prompt("Come on! I said a NUMBER in NUMERIC form!", "1");
+    checkSquare(newAnswer);
+  }
+};
+let getSq = prompt("Pass me an integer in numeric form, and I'll squate it for you.", "2");
+alert(checkSquare(dodgeAge)); //Done? I think so for this one.
+
+// In a second function, capitalize the first letter of a string and add a period (.) to the end of the string if it doesn't already end with a period
+function grammarCheck (s) {
+  //pass the string into an array? Thank you GOOGLE!
+  let temp = s.split(""); //split morphs a string into an array of substrings, and the "" separates each character including the whitespace.
+  temp[0].toUpperCase();
+  //period checking + adding...
+  if ( temp[temp.length-1] != '.' ) {
+    temp.push('.');
+  }
+  //return temp; //?
+};
+//Include a function call here?
+
+// Create a string that will flip the position of the first and second half of a string. For example, the string “abcdef” would be returned as “defabc”. Hint: use substring.
+function flipped (str) {
+  let temp = str.split("");
+  let midpoint = temp.length / 2;
+  //Don't forget to adjust for array's addressing quirk.
+  //use array.slice(start, end)? Doesn't effect original array, copies into new array.
+  //array.splice() seems like the best choice here.
+};
+// BONUS: If you are bored by all that, write a function that checks if a given string is a palindrome.
