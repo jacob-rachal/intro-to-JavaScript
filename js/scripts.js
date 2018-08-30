@@ -531,3 +531,8 @@ parseInt();//needs arguments.
 
 // "Ryeker".toUpperCase();//doesnot need arguments.
 console.log("Ryeker".toUpperCase());//methods implicitly uses the thing to the left of the period.
+// Not all functions are methods, but all methods are functions.
+// the 3 facts about methods.
+//1. it has to be attached toe an object,
+//2 it implicitly consumes an object, and
+//3 it returns something.
