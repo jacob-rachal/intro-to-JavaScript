@@ -486,13 +486,13 @@ pasta => (pasta.toUpperCase()); //acting like anonymous func.
 
 //calculating a dog's age.
 //Accept 1 argument (age of the dog in years).
-let dogAge = prompt("How old is your dog? (In human years)");
-let doge = parseInt(dogAge);
+// let dogAge = prompt("How old is your dog? (In human years)");
+// let doge = parseInt(dogAge);
 let doTH = function() {
   let finale = doge*7;
   alert(`That dog is ${finale} years old in DOG years.`);
 };
-doTH();
+// doTH(); //function call.
 // Return the age of the dog using the conversion rate of 1 year to 7 "dog" years.
 // Alert the answer.
 //Ryker's attempt
@@ -539,7 +539,7 @@ function calculateDogYears(age) {
 //
 // Take a number and return the square of that number (power of 2).
 // If a non-number argument is passed into the function, alert NaN and prompt for another response
-function checkSquare(n) {
+function checkSquare (n) {
   let parsed = parseInt(n);
   if(!isNaN(parsed)) {
     return parsed * parsed;
@@ -548,8 +548,10 @@ function checkSquare(n) {
     checkSquare(newAnswer);
   }
 };
-let getSq = prompt("Pass me an integer in numeric form, and I'll squate it for you.", "2");
-alert(checkSquare(dodgeAge)); //Done? I think so for this one.
+console.log("Initiating getSquare function at this point.");
+let getSq = prompt("Pass me an integer in numeric form, and I'll square it for you.", "2");
+alert(checkSquare(getSq)); //Done? I think so for this one.
+
 
 // In a second function, capitalize the first letter of a string and add a period (.) to the end of the string if it doesn't already end with a period
 function grammarCheck (s) {
@@ -557,12 +559,17 @@ function grammarCheck (s) {
   let temp = s.split(""); //split morphs a string into an array of substrings, and the "" separates each character including the whitespace.
   temp[0].toUpperCase();
   //period checking + adding...
-  if ( temp[temp.length-1] != '.' ) {
+  if ( temp[(temp.length)-1] != '.' ) {
     temp.push('.');
   }
-  //return temp; //?
+  return temp; //? I don't think so since this is being called within a alert, at least for the previous func's case.
+  //use either join or toString.
+  //temp.toString(); //Let's try this...
 };
 //Include a function call here?
+console.log("Initiating grammarCheck function at this point.");
+let sent = prompt("Pass me a sentence, and I'll caps the first character and add a period if you forget to add one yourself.");
+alert(grammarCheck(sent));
 
 // Create a string that will flip the position of the first and second half of a string. For example, the string “abcdef” would be returned as “defabc”. Hint: use substring.
 function flipped (str) {
@@ -571,5 +578,14 @@ function flipped (str) {
   //Don't forget to adjust for array's addressing quirk.
   //use array.slice(start, end)? Doesn't effect original array, copies into new array.
   //array.splice() seems like the best choice here.
+  let front = temp.splice(0, midpoint);//I think that endpoint is correctly adjusted, will need to test later.
+  temp.push(front);
+  //cout the new string array/
+  return temp; //*Shrug emoji*
 };
+//function call here.
+console.log("Initiating string flipper function at this point.");
+let shorty = prompt("Now pass me a short string, and I'll flip the placement of the halves.");
+alert(flipped(shorty));
+
 // BONUS: If you are bored by all that, write a function that checks if a given string is a palindrome.
