@@ -557,9 +557,9 @@ alert(checkSquare(getSq)); //Done? I think so for this one.
 function grammarCheck (s) {
   //pass the string into an array? Thank you GOOGLE!
   let temp = s.split(""); //split morphs a string into an array of substrings, and the "" separates each character including the whitespace.
-  temp[0].toUpperCase();
+  temp[0].toUpperCase(); //SOMETHING IS going wrong here...
   //period checking + adding...
-  if ( temp[(temp.length)-1] != '.' ) {
+  if ( temp[(temp.length)-1] != "." ) {
     temp.push('.');
   }
   return temp; //? I don't think so since this is being called within a alert, at least for the previous func's case.
