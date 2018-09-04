@@ -180,10 +180,11 @@ input.addEventListener("keydown", e => {
 // Ask your user to give you a scale (Celcius or Fahrenheit) and the tempurature they want to convert.
 //So if they give you 90 Fahrenheit, they would want you to convert 90 degrees Fahrenheit to whatever that is in Celcius
 let getScale = prompt("Hello! I am a temperature converter. I can convert from Fahrenheit to Celcius, or the other way around! First, enter the scale you want to convert FROM. (C for Celcius-to-Fahrenheit, F for Fahrenheit-to-Celcius): ");
-let getDeg = prompt(`Now what is the degree in ${getScale} you want me to convert? (enter as a valid integer, please): `)
+let deg = prompt(`Now what is the degree in ${getScale} you want me to convert? (enter as a valid integer, please): `)
+let getDeg = parseInt(deg);
 let toHtml = document.querySelectorAll(".tempThingy");
 // toHtml[0].innerHTML = `result`;
-
+let boolSwitch;
 
 // Employ a function that accepts those two values as arguments: temperature and scale (either celcius or fahrenheit) and converts the tempurature they gave you to the opposite scale.
 // At this point, assume that I have run error-checking cases on the user's input.
@@ -198,19 +199,25 @@ function fToC(bait) {
   let product = (bait-32)/1.8;
   return product;
 };
-
+let sweat;
 function converter (degree, scale) {
   //scale is a string or a single char, and degree is either an int or a string itself.
   // Assume arguments are char, int. EX: 97, F or 30, C.
-  let temp = parseInt(degree);
+  // let temp = parseInt(degree);
+  let temp = degree;
+
   let result;
   switch(scale){
     case 'C':
       result = cToF(temp) + " Degrees Fahrenheit.";
+      sweat = cToF(temp);
+      boolSwitch = 'F';
       break;
 
     case 'F':
       result = fToC(temp) + " Degrees Celcius.";
+      sweat = fToC(temp);
+      boolSwitch = 'C';
       break;
 
     default:
@@ -223,6 +230,12 @@ function converter (degree, scale) {
 };
 
 converter(getDeg, getScale);
+toHtml[0].addEventListener(
+  "mousedown",
+  event => {
+    converter(sweat, boolSwitch);
+  }
+)
 // Display the temperature in an h3 with minimal styling.
 
 // TO-DO still (sections below)
