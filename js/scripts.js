@@ -181,6 +181,9 @@ input.addEventListener("keydown", e => {
 //So if they give you 90 Fahrenheit, they would want you to convert 90 degrees Fahrenheit to whatever that is in Celcius
 let getScale = prompt("Hello! I am a temperature converter. I can convert from Fahrenheit to Celcius, or the other way around! First, enter the scale you want to convert FROM. (C for Celcius-to-Fahrenheit, F for Fahrenheit-to-Celcius): ");
 let getDeg = prompt(`Now what is the degree in ${getScale} you want me to convert? (enter as a valid integer, please): `)
+let toHtml = document.querySelectorAll(".tempThingy");
+// toHtml[0].innerHTML = `result`;
+
 
 // Employ a function that accepts those two values as arguments: temperature and scale (either celcius or fahrenheit) and converts the tempurature they gave you to the opposite scale.
 // At this point, assume that I have run error-checking cases on the user's input.
@@ -203,21 +206,25 @@ function converter (degree, scale) {
   let result;
   switch(scale){
     case 'C':
-      result = cToF(temp);
+      result = cToF(temp) + " Degrees Fahrenheit.";
       break;
 
     case 'F':
-      result = fToC(temp);
+      result = fToC(temp) + " Degrees Celcius.";
       break;
 
     default:
       result = "Sorry, something's not valid. Please try again.";
 
   }
-  console.log(result); // debugging checker
+  // console.log(result); // debugging checker
+  // toHtml.innerHTML = `result`;
+  toHtml[0].innerHTML = result;
 };
 
 converter(getDeg, getScale);
 // Display the temperature in an h3 with minimal styling.
+
+// TO-DO still (sections below)
 // From that point on, when the user clicks on the h3, run the function to convert the temperature back and forth between Celcius and Fahrenheit.
 // Display the converted temperature in the h3 each time it is changed.
