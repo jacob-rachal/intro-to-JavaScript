@@ -141,7 +141,6 @@ function ack (method, element) {
 // LISTENING FOR EVENTS.
 // also, DOM nodes == elements.
 
-
 //EVENT LISTENERS
 let redDiv = document.querySelector(".red-background");
 
@@ -173,3 +172,52 @@ input.addEventListener("keydown", e => {
     console.log(e.keyCode);
   }
 );
+
+//takehome day 6 section, my attempt.
+
+// Write a program that converts temperatures. It should:
+
+// Ask your user to give you a scale (Celcius or Fahrenheit) and the tempurature they want to convert.
+//So if they give you 90 Fahrenheit, they would want you to convert 90 degrees Fahrenheit to whatever that is in Celcius
+let getScale = prompt("Hello! I am a temperature converter. I can convert from Fahrenheit to Celcius, or the other way around! First, enter the scale you want to convert FROM. (C for Celcius-to-Fahrenheit, F for Fahrenheit-to-Celcius): ");
+let getDeg = prompt(`Now what is the degree in ${getScale} you want me to convert? (enter as a valid integer, please): `)
+
+// Employ a function that accepts those two values as arguments: temperature and scale (either celcius or fahrenheit) and converts the tempurature they gave you to the opposite scale.
+// At this point, assume that I have run error-checking cases on the user's input.
+//Helper function 1: Celcius to Fahrenheit.
+function cToF(bait) {
+  let product = bait*1.8+32;
+  return product;
+};
+
+//Helper function 2: Fahrenheit to Celcius
+function fToC(bait) {
+  let product = (bait-32)/1.8;
+  return product;
+};
+
+function converter (degree, scale) {
+  //scale is a string or a single char, and degree is either an int or a string itself.
+  // Assume arguments are char, int. EX: 97, F or 30, C.
+  let temp = parseInt(degree);
+  let result;
+  switch(scale){
+    case 'C':
+      result = cToF(temp);
+      break;
+
+    case 'F':
+      result = fToC(temp);
+      break;
+
+    default:
+      result = "Sorry, something's not valid. Please try again.";
+
+  }
+  console.log(result); // debugging checker
+};
+
+converter(getDeg, getScale);
+// Display the temperature in an h3 with minimal styling.
+// From that point on, when the user clicks on the h3, run the function to convert the temperature back and forth between Celcius and Fahrenheit.
+// Display the converted temperature in the h3 each time it is changed.
