@@ -100,9 +100,9 @@ createLi(["pull-right"], "Contact");
 createLi(["pull-right"], "About"); //...this is our nav-bar!
 //nothing will display, since this hasn't been appended to the body yet.
 
-newUl.classList.add("nav", "nav-pills");
-newHeader.appendChild(newUl);
-body.insertBefore(newHeader, script); //what to append, and the location where you want to append above.
+// newUl.classList.add("nav", "nav-pills");
+// newHeader.appendChild(newUl);
+// body.insertBefore(newHeader, script); //what to append, and the location where you want to append above.
 // HOLY SMOKES, IT WORKED
 
 //adding more things.
@@ -115,22 +115,22 @@ function createTextElement(elementType, text) {
 
 newDiv.classList.add("text-center");
 
-let h1 = createTextElement("h1", "Hello World!");
-let p = createTextElement("p", "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.");
-newDiv.appendChild(h1);
-newDiv.appendChild(p);
-body.insertBefore(newDiv, script); //....neato! There's our headline!
+// let h1 = createTextElement("h1", "Hello World!");
+// let p = createTextElement("p", "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.");
+// newDiv.appendChild(h1);
+// newDiv.appendChild(p);
+// body.insertBefore(newDiv, script); //....neato! There's our headline!
 
 //adding a footer now.
 // IMP note TO self: for help on takehomes, look at next day's itinerary.
 
-let newFooterLink = document.createElement("a");
-newFooterLink.textContent = "Check me out.";
-newFooterLink.setAttribute("href", "https://www.google.com/");
-newFooterLink.setAttribute("target", "_blank");
-newFooterLink.classList.add("text-center", "footer");//originally had newFooter.classList.add("text-center");// auto centered the text.
-newFooter.appendChild(newFooterLink);
-body.insertBefore(newFooter, script);
+// let newFooterLink = document.createElement("a");
+// newFooterLink.textContent = "Check me out.";
+// newFooterLink.setAttribute("href", "https://www.google.com/");
+// newFooterLink.setAttribute("target", "_blank");
+// newFooterLink.classList.add("text-center", "footer");//originally had newFooter.classList.add("text-center");// auto centered the text.
+// newFooter.appendChild(newFooterLink);
+// body.insertBefore(newFooter, script);
 //very very very basic example of how you can generate a webpage using (almost) only JavaScript. Useful for todo checklist app finale.
 //lookup "Javascript 30" for daily javascript exercises.
 
@@ -157,7 +157,7 @@ function myFunc() {
 // console.log(this);//posts everything going on within this file.
 // console.log("Global", this);
 
-myFunc();
+// myFunc(); //commenting out to not take up space for the takehome.
 
 //doing the FizzBuzz test. This is something that you will get asked to do at interviews. Some things may be different, but the heart will be the same.
 
@@ -191,8 +191,36 @@ function fizzBuzz() {
   body.insertBefore(list, script);
 };
 
-fizzBuzz();
+// fizzBuzz(); //commenting out for the takehome assignment.
 
 
+//end Day 7
+// =================================
+//BEGINNING OF TAKEHOME-d7 on 9/4/18
 
-//end
+// Write a program that does the following:
+
+// When the user clicks a button, prompt them for the a title. //DONE.
+//Jacob: the 'a' tag, or just a normal title?
+alert(`Hello there, USER! In the next popup, please enter a title.`);
+let title = prompt(`ENTER PAGE TITLE HERE: `);
+//error check their response?
+let h1 = createTextElement("h1", title); //Reuseing this function.
+// let p = createTextElement("p", "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.");
+newDiv.appendChild(h1);
+// newDiv.appendChild(p);
+body.insertBefore(newDiv, script);
+// Put that title into an h1 that is centered on the page. //DONE!
+
+// Ask the user to write a few sentences about what they did today. //DONE :)
+let summary = prompt(`Excellent! Now, if you don't mind, please write down a sentence or more about waht you did today.`);
+// Populate a p tag with the sentences, align the p tag text with justify. // er..
+let p = createTextElement("p", summary);
+p.classList.add("justify-left"); // ...done I think?
+newDiv.appendChild(p);
+body.insertBefore(newDiv, script);
+
+// Finally, ask the user for his or her favorite color, and set the background of the p tag to that color
+//Jacob: grab the code from takehome day 3, which had us using the switch cases and colors.
+
+// Remember, check for edge cases with color.
