@@ -216,11 +216,54 @@ body.insertBefore(newDiv, script);
 let summary = prompt(`Excellent! Now, if you don't mind, please write down a sentence or more about waht you did today.`);
 // Populate a p tag with the sentences, align the p tag text with justify. // er..
 let p = createTextElement("p", summary);
-p.classList.add("justify-left"); // ...done I think?
+p.classList.add("justify-left", "backColor"); // ...done I think?
+// The class "backColor" is for the last part of the takehome.
 newDiv.appendChild(p);
 body.insertBefore(newDiv, script);
 
 // Finally, ask the user for his or her favorite color, and set the background of the p tag to that color
 //Jacob: grab the code from takehome day 3, which had us using the switch cases and colors.
 
+//to do:: Make a function that takes in a string and sets that string as the background color of the p-tag with the class of "backColor".
+let userPTag = document.getElementsByClassName('backColor'); //not sure what I'll be using this for yet.
+
+// let userColor = prompt("Alright! Now, out of the folowing 10 colors, which one is your favorite? Red, orange, yellow, green, blue, pink, purple, black, white, and grey. (Enter your answer as a lowercase string.)")
+
+// switch (userColor) {
+//
+//   case "red":
+//     // I attempted to use an OR within the checker for "Red", but it didn't work.
+//     break; //escapes the switch statement.
+//
+//   case "orange":
+//     break;
+//
+//   case "yellow":
+//     break;
+//
+//   case "green":
+//     break;
+//
+//   case "blue":
+//     break;
+//
+//   case "pink":
+//     break;
+//
+//   case "purple":
+//     break;
+//
+//   case "black":
+//     break;
+//
+//   case "white":
+//     break;
+//
+//   case "grey":
+//     break;
+//
+//   default:
+//     alert("Something went wrong, refresh the page and try again.")
+//     console.log("The user failed to input an answer that could be properly read.");
+// };
 // Remember, check for edge cases with color.
