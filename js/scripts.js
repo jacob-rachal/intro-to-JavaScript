@@ -224,46 +224,71 @@ body.insertBefore(newDiv, script);
 // Finally, ask the user for his or her favorite color, and set the background of the p tag to that color
 //Jacob: grab the code from takehome day 3, which had us using the switch cases and colors.
 
-//to do:: Make a function that takes in a string and sets that string as the background color of the p-tag with the class of "backColor".
-let userPTag = document.getElementsByClassName('backColor'); //not sure what I'll be using this for yet.
+// to do?:: Make a function that takes in a string and sets that string as the background color of the p-tag with the class of "backColor".
+let userPTag = document.querySelector(".backColor"); //not sure what I'll be using this for yet.
 
-// let userColor = prompt("Alright! Now, out of the folowing 10 colors, which one is your favorite? Red, orange, yellow, green, blue, pink, purple, black, white, and grey. (Enter your answer as a lowercase string.)")
+let userColor = prompt("Alright! Now, out of the folowing 10 colors, which one is your favorite? Red, orange, yellow, green, blue, pink, purple, black, white, and grey. (Enter your answer as a lowercase string.)");
 
-// switch (userColor) {
-//
-//   case "red":
-//     // I attempted to use an OR within the checker for "Red", but it didn't work.
-//     break; //escapes the switch statement.
-//
-//   case "orange":
-//     break;
-//
-//   case "yellow":
-//     break;
-//
-//   case "green":
-//     break;
-//
-//   case "blue":
-//     break;
-//
-//   case "pink":
-//     break;
-//
-//   case "purple":
-//     break;
-//
-//   case "black":
-//     break;
-//
-//   case "white":
-//     break;
-//
-//   case "grey":
-//     break;
-//
-//   default:
-//     alert("Something went wrong, refresh the page and try again.")
-//     console.log("The user failed to input an answer that could be properly read.");
-// };
+switch (userColor) {
+
+  case "red":
+    userPTag.style.backgroundColor = "#FF0000";
+    break; //escapes the switch statement.
+
+  case "Red":
+    userPTag.style.backgroundColor = "#FF0000";
+    break;
+
+  case "RED":
+    userPTag.style.backgroundColor = "#FF0000";
+    break;
+
+  case "orange":
+    userPTag.style.backgroundColor = "#ffa500";
+    break;
+
+  case "Orange":
+    userPTag.style.backgroundColor = "#ffa500";
+    break;
+
+  case "ORANGE":
+    userPTag.style.backgroundColor = "#ffa500";
+    break;
+
+  case "yellow":
+    userPTag.style.backgroundColor = "#ffff00";
+    break;
+
+  case "green":
+    userPTag.style.backgroundColor = "#00FF00";
+    break;
+
+  case "blue":
+    userPTag.style.backgroundColor = "#0000FF";
+    break;
+
+  case "pink":
+    userPTag.style.backgroundColor = "#ff3355";
+    break;
+
+  case "purple":
+    userPTag.style.backgroundColor = "#800080";
+    break;
+
+  case "black":
+    userPTag.style.backgroundColor = "#000000";
+    break;
+
+  case "white":
+    userPTag.style.backgroundColor = "#FFFFFF";
+    break;
+
+  case "grey":
+    userPTag.style.backgroundColor = rgb(120, 120, 120);
+    break;
+
+  default:
+    alert("Something went wrong, refresh the page and try again.")
+    console.log("The user failed to input an answer that could be properly read.");
+};
 // Remember, check for edge cases with color.
