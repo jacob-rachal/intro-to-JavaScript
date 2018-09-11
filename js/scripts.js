@@ -335,12 +335,82 @@ function fizzBuzz(count, val1, val2) {
 //do need body & script active.
 
 // finnished adding a form section in the index.html.
-let messageForm = document.forms.messageForm;//gets the entire form.
+// let messageForm = document.forms.messageForm;//gets the entire form.
 //document.forms[0];//the forms are on an array//each form is also an array.// also works if the form has an ID.
 // let message = messageForm["msg"];//gets the input off that form.
-// console.log(messageForm);
+// console.log(messageForm); //just grabbing the form from the html.
 // console.log(message);
-let message = messageForm["msg"];
+// let message = messageForm.msg;
+//let message = messageForm["msg"];//either way.
+
+//writting an event listener.
+messageForm.addEventListener("submit", e => {
+  e.preventDefault(); //since we don't have a DB or server to send data to, don't perform that default action.
+  // console.log(e);
+  // console.log(e.target); //grabs the form from the EVENT!
+  // console.log(e.target["msg"]);//prints out the input.
+  // console.log(e.target["msg"].value); //prints out msg. Or whatever you enter and send within the input field.
+  let list = document.getElementById("list");
+  let message = e.target["msg"].value;
+  let newMessage = document.createElement("li");
+  newMessage.textContent = message;
+  list.appendChild(newMessage);
+  messageForm.reset(); //clears out the message bar after you submit.
+}
+);
+
+function generateList() {
+  let fullList = [
+    'First',
+    'Second',
+    'Third',
+    'Fourth'
+  ];
+  let list = document.getElementById("list");
+  for (var i = 0; i < fullList.length; i++) {
+    let msg = document.createElement("li");
+    msg.textContent = fullList[i];
+    msg.id = `item-${i + 1}`;
+    list.appendChild(msg);
+  }
+};
+
+generateList();
+
+// This is super bad.
+// function submitForm () {
+//   console.log(document.getElementById("message").value);
+// };
+
+
+// more on THIS.
+// var myName = "Jacob";
+// var myAge = 27;
+// var currentClass = "JavaScript";
+// console.log(this);
+// console.log(this.myName);
+
+//"Healthy dose of anxiety"
+
+function aboutMe () {
+  let me ={
+    firstName: "Jacob",
+    lastName: "Rachal",
+    age: 27,
+    currentClass: "JavaScript",
+    fullName: function () {
+      return `${this.firstName} ${this.lastName}`
+    }
+  }//'${this.firstName} ${this.lastName}'
+  // console.log(this);
+  console.log(me.fullName());
+};
+
+aboutMe();
+
+// ON THE TAKEHOME:::
+// can get started on the html and styling, will be able to do the JavaScript part after next Monday.
+
 
 
 
