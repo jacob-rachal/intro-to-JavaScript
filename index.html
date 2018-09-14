@@ -5,10 +5,35 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   <title>JavaScript</title>
 </head>
 <body>
-  <h1></h1>
+  <!-- <h1></h1> -->
+
+  <div class="container-fluid">
+    <!-- for the TIMERS -->
+    <h1 class="text-center">Day 10</h1>
+    <!-- timer then clock -->
+    <h1 class="text-center" id="clock"></h1>
+    <h1 id="currentUser"></h1>
+    <div>
+      <button class="btn btn-primary" id="timer-start">Start Timer</button>
+      <button class="btn btn-primary" id="cancel-timer">X</button>
+    </div>
+    <div>
+      <button class="btn btn-primary" id="interval-start">Start Interval</button>
+      <button class="btn btn-primary" id="cancel-interval">X</button>
+    </div>
+    <!-- //use a bootstrap cancel icon -->
+    <!-- <button id="cancel-timer">X</button> -->
+    <div>
+      <button class="btn btn-primary" id="get-username">Add your username</button>
+      <button class="btn btn-primary" id="displayUsername">Show the current user</button>
+    </div>
+  </div>
+
+
 
   <!-- <style>
     background-color: green;
